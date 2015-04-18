@@ -1,0 +1,85 @@
+body {
+	background-color: black;
+	color: white;
+	font-family: Arial;
+}
+table {
+	border-collapse: collapse;
+}
+
+a {
+	color: white;
+}
+
+.content {
+	width: 200px;
+	height: 50px;
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+}
+.info {
+	font-weight: bold;
+	font-size: 10px;
+	font-family: Arial;
+	padding: 0 2px 0 2px;
+	line-height: 10px;
+}
+tr {
+	border-collapse: collapse;
+}
+td {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	border: 1px solid #EEE;
+	background-color: #111;
+	border-collapse: collapse;
+	overflow: hidden;
+	height: 50px;
+}
+
+
+.done {
+	background-image: url(check.png);
+	background-repeat: no-repeat;
+	background-size: 90% 70%;
+	background-position: 50%;
+}
+.done.lightcolor {
+	background-image: url(check_black.png);
+}
+.cantDo.lightcolor {
+	background-image: url(cross_black.png);
+}
+.cantDo {
+	background-image: url(cross.png);
+	background-repeat: no-repeat;
+	background-size: 90% 70%;
+	background-position: 50% 60%;
+}
+
+.sub {
+	font-size: 0.70em;
+	font-family: Arial;
+	font-weight: bold;
+}
+
+.boxes {
+	float:left;
+	position:relative;
+	height:100%;
+}
+.doing:hover {
+	background-image: url(doing.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+.doing.lightcolor:hover {
+	background-image: url(doing_black.png);
+}
+.boxes:hover {
+}
+.card:hover {
+	background-color: #222;
+}
