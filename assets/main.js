@@ -254,7 +254,7 @@ function checkAccess() {
 					setEditAccessEnabled(false);
 					setMessage("accessInfo", "Access denied.", false, true);
 				} else {
-					setMessage("accessInfo", "An error occured", false, true);
+					setMessage("accessInfo", "An error occured ("+data+")", false, true);
 				}
 				console.log("Response: "+data);	
 			});

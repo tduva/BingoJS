@@ -12,7 +12,7 @@ var meta = {
 	 *
 	 * minimal: Only the table, with auto-update, local editing disabled
 	 * view: Table and update-controls, auto-update by default, local editing disabled
-	 * default: Like view, but you can edit the table locally
+	 * default: Like view, but you can edit the table locally, auto-update off by default
 	 * editserver: Like default, but includes the form to enter the edit key to enable server write access
 	 */
 	defaultMode: "default",
@@ -21,7 +21,7 @@ var meta = {
 	 * The file that should receive the bingo state to save it. The sate
 	 * is send in a POST request.
 	 */
-	editUrl: "bingo.php",
+	editUrl: "bingo_save_state.php",
 
 	/**
 	 * The file to update the bingo state from. If you leave this empty
@@ -41,7 +41,7 @@ var meta = {
 	/**
 	 * Set this to true to disable updating state from server altogether.
 	 */
-	noUpdate: true
+	noUpdate: false
 }
 
 /**
