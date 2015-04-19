@@ -53,3 +53,7 @@ function prependZero(input) {
 	}
 	return input;
 }
+
+function isBlank(str) {
+    return (!str || /^\s*$/.test(str));
+}

@@ -229,11 +229,11 @@ function setEditAccessEnabled(enabled) {
 }
 
 function isUpdateAvailable() {
-	return meta.updateUrl != undefined && meta.updateUrl != null && !meta.noUpdate;
+	return !isBlank(meta.updateUrl) && !meta.noUpdate;
 }
 
 function isEditingAvailable() {
-	return meta.editUrl != undefined && meta.editUrl != null;
+	return !isBlank(meta.editUrl);
 }
 
 function checkAccess() {
