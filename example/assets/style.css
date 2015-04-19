@@ -1,0 +1,146 @@
+
+/****
+ * General styles
+ */
+
+body {
+	background-color: black;
+	color: white;
+	font-family: Arial;
+}
+
+a {
+	color: white;
+}
+
+/****
+ * The main table
+ */
+
+table {
+	border-collapse: collapse;
+}
+
+/**
+ * The table cells
+ */
+
+td {
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	border: 1px solid #EEE;
+	background-color: #111;
+	border-collapse: collapse;
+	overflow: hidden;
+	width: 200px; /* Width of each card */
+	height: 50px; /* Height of each card */
+}
+
+/**
+ * The container for the title and description of the card
+ */
+.content {
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/*
+ * The container for the description of the card (usually smaller text)
+ */
+.info {
+	font-weight: bold;
+	font-size: 10px;
+	font-family: Arial;
+	padding: 0 2px 0 2px;
+	line-height: 10px;
+}
+
+/**
+ * The player boxes on each card.
+ *
+ * The styles for each player (p0, p1, ..) with their assigned color
+ * and position are created dynamically by JavaScript. The same goes
+ * for the bg class, which defines the height of each box (which depends
+ * on the number of players).
+ */
+
+.boxes {
+	float:left;
+	position:relative;
+	height:100%;
+}
+
+.box {
+	width: 16px;
+}
+
+/**
+ * The different states for the boxes
+ */
+
+.done {
+	background-image: url(check.png);
+	background-repeat: no-repeat;
+	background-size: 90% 70%;
+	background-position: 50%;
+}
+
+/*
+ * Other images for light colors (as manually defined in the data.js)
+ */
+.done.lightcolor {
+	background-image: url(check_black.png);
+}
+.cantDo.lightcolor {
+	background-image: url(cross_black.png);
+}
+.cantDo {
+	background-image: url(cross.png);
+	background-repeat: no-repeat;
+	background-size: 90% 70%;
+	background-position: 50% 60%;
+}
+
+.doing:hover {
+	background-image: url(doing.png);
+	background-repeat: no-repeat;
+	background-position: 50%;
+}
+.doing.lightcolor:hover {
+	background-image: url(doing_black.png);
+}
+.boxes:hover {
+}
+.card:hover {
+	background-color: #222;
+}
+
+/**
+ * Other elements (not the main table)
+ */
+
+#more {
+	clear: both;
+	max-width: 800px;
+	font-size: 0.8em;
+	padding: 0 10 5 10;
+	margin-top: 20px;
+}
+
+#more div:first-child {
+	border: none;
+}
+
+#more div {
+	border-top: 1px solid #999;
+}
+
+#bingoInfo {
+	max-width: 800px;
+}
+
+#playersInfo {
+	font-size: 16px;
+}
