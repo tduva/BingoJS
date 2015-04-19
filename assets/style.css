@@ -1,30 +1,30 @@
+
+/****
+ * General styles
+ */
+
 body {
 	background-color: black;
 	color: white;
 	font-family: Arial;
-}
-table {
-	border-collapse: collapse;
 }
 
 a {
 	color: white;
 }
 
-.content {
-	width: 200px;
-	height: 50px;
-	font-family: Arial;
-	font-weight: bold;
-	font-size: 14px;
+/****
+ * The main table
+ */
+
+table {
+	border-collapse: collapse;
 }
-.info {
-	font-weight: bold;
-	font-size: 10px;
-	font-family: Arial;
-	padding: 0 2px 0 2px;
-	line-height: 10px;
-}
+
+/**
+ * The table cells
+ */
+
 tr {
 	border-collapse: collapse;
 }
@@ -36,9 +36,53 @@ td {
 	background-color: #111;
 	border-collapse: collapse;
 	overflow: hidden;
-	height: 50px;
+	height: 50px; /* The height has to be changed for the content as well */
 }
 
+/**
+ * The container for the title and description of the card
+ */
+.content {
+	width: 200px;
+	/*height: 50px; /* The height has to be changed for the cell as well */
+	font-family: Arial;
+	font-weight: bold;
+	font-size: 14px;
+}
+
+/*
+ * The container for the description of the card (usually smaller text)
+ */
+.info {
+	font-weight: bold;
+	font-size: 10px;
+	font-family: Arial;
+	padding: 0 2px 0 2px;
+	line-height: 10px;
+}
+
+/**
+ * The player boxes on each card.
+ *
+ * The styles for each player (p0, p1, ..) with their assigned color
+ * and position are created dynamically by JavaScript. The same goes
+ * for the bg class, which defines the height of each box (which depends
+ * on the number of players).
+ */
+
+.boxes {
+	float:left;
+	position:relative;
+	height:100%;
+}
+
+.box {
+	width: 16px;
+}
+
+/**
+ * The different states for the boxes
+ */
 
 .done {
 	background-image: url(check.png);
@@ -46,6 +90,10 @@ td {
 	background-size: 90% 70%;
 	background-position: 50%;
 }
+
+/*
+ * Other images for light colors (as manually defined in the data.js)
+ */
 .done.lightcolor {
 	background-image: url(check_black.png);
 }
@@ -59,17 +107,6 @@ td {
 	background-position: 50% 60%;
 }
 
-.sub {
-	font-size: 0.70em;
-	font-family: Arial;
-	font-weight: bold;
-}
-
-.boxes {
-	float:left;
-	position:relative;
-	height:100%;
-}
 .doing:hover {
 	background-image: url(doing.png);
 	background-repeat: no-repeat;
@@ -82,4 +119,32 @@ td {
 }
 .card:hover {
 	background-color: #222;
+}
+
+/**
+ * Other elements (not the main table)
+ */
+
+#more {
+	clear: both;
+	max-width: 800px;
+	font-size: 0.8em;
+	padding: 0 10 5 10;
+	margin-top: 20px;
+}
+
+#more div:first-child {
+	border: none;
+}
+
+#more div {
+	border-top: 1px solid #999;
+}
+
+#bingoInfo {
+	max-width: 800px;
+}
+
+#playersInfo {
+	font-size: 16px;
 }

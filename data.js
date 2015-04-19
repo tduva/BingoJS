@@ -3,7 +3,9 @@ var meta = {
 	title: "Test Bingo Sheet",
 	editUrl: "bingo.php",
 	updateUrl: "bingostate",
-	updateInterval: 30
+	updateInterval: 30,
+	defaultMode: "view",
+	done: false
 }
 
 var data = [

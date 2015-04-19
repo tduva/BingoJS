@@ -1,19 +1,29 @@
 <?php
 
-$edit_key = "abcde";
-$file = "bingostate";
-
-print_r($_POST);
+$edit_key = "abcde"; // The key has to be send as &edit_key= to save anything
+$file = "bingostate"; // The name of the file to save the data into
 
 if (isset($_GET["edit_key"]) && $_GET["edit_key"] == $edit_key) {
 	// Can do edit stuff
 	if (isset($_GET["id"]) && isset($_GET["state"])) {
-		set($file, $_GET["id"],$_GET["state"]);
-		echo "Edited file ".$file;
+		// Edit a single field
+		// Not used right now
+		//set($file, $_GET["id"],$_GET["state"]);
+		//echo "Edited file ".$file;
 	} else if (isset($_POST["states"])) {
-		file_put_contents($file, $_POST["states"]);
+		// Write all states into file
+		$data = $_POST["states"];
+
+		// Check if actually JSON and not too long (just in case)
+		if (json_decode($data) == NULL || strlen($data) > 1024*10) {
+			echo "Invalid data supplied.";
+			httpStatus(400);
+		} else {
+			file_put_contents($file, $data, LOCK_EX);
+			echo "Edited file '".$file."'";
+		}
 	} else {
-		echo "Invalid parameters";
+		echo "Invalid parameters, but auth ok.";
 	}
 } else {
 	httpStatus(401);
@@ -24,6 +34,9 @@ function httpStatus($code) {
 	header('X-PHP-Response-Code: '.$code, true, $code);
 }
 
+/*
+ * Not used right now
+ */
 function set($file, $id, $state) {
 	$f = fopen($file, "a+");
 	
