@@ -273,7 +273,7 @@ function autoUpdate() {
 }
 
 function getFromServer() {
-	if (meta.updateUrl != undefined && meta.updateUrl != null) {
+	if (isUpdateAvailable()) {
 		setMessage("updating", "Updating..");
 		$.get(meta.updateUrl, null, null, "text")
 			.done(function(data) {

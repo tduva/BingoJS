@@ -1,13 +1,63 @@
 var meta = {
+
+	// The id is used for saving to local storage
 	id: "test",
+
+	// The title of the sheet
 	title: "Test Bingo Sheet",
+
+	/**
+	 * The default mode to set the sheet to if no mode is specified via URL (hash)
+	 * parameters:
+	 *
+	 * minimal: Only the table, with auto-update, local editing disabled
+	 * view: Table and update-controls, auto-update by default, local editing disabled
+	 * default: Like view, but you can edit the table locally
+	 * editserver: Like default, but includes the form to enter the edit key to enable server write access
+	 */
+	defaultMode: "default",
+
+	/**
+	 * The file that should receive the bingo state to save it. The sate
+	 * is send in a POST request.
+	 */
 	editUrl: "bingo.php",
+
+	/**
+	 * The file to update the bingo state from. If you leave this empty
+	 * the update function is disabled.
+	 */
 	updateUrl: "bingostate",
-	updateInterval: 30,
-	defaultMode: "view",
-	done: false
+
+	// How often to update state from server if auto-update is enabled (seconds)
+	updateInterval: 60,
+
+	/**
+	 * If set to true, then state is only loaded from server once on load (if enabled),
+	 * and the title gets [Done] added to it.
+	 */
+	done: false,
+
+	/**
+	 * Set this to true to disable updating state from server altogether.
+	 */
+	noUpdate: true
 }
 
+/**
+ * Defines the data for the sheets.
+ *
+ * The order of this matters for the saved state, so it shouldn't be changed once the sheet
+ * is in use (changing text in place is ok of course).
+ *
+ * This should be pretty self-explanatory.
+ *
+ * You can use the "infoSize" property to set a different size for the info text (usually the
+ * text explaining the goal a bit further) in case it doesn't fit onto the card.
+ *
+ * Example:
+ * {name:"Yes Fancy Crap", info:"2 USJ after picking up everyone on Salvatore's Called A Meeting", infoSize:"10"}
+ */
 var data = [
 	[
 		{name:"Special Delivery", info:"Beat Kingdom Come"},
@@ -43,29 +93,30 @@ var data = [
 		{name:"No Replays!", info:""},
 		{name:"9 Unique Stunt Jumps", info:""},
 		{name:"Get Laid", info:""}
-		]
+	]
+];
 
-		];
-		var players = [
-			"MrNojojojo", "Mhmd_FVC", "Overcooler_", "Menno888"
-			];
-		var playerColors = [
-			"green", "blue", "#EEEE00", "red"
-		];
-		var lightColors = [
-			"yellow", "gold", "#EEEE00"
-		];
+/**
+ * Define the playernames. The order of these shouldn't be changed once
+ * the sheet is in use and state is saved.
+ */
+var players = [
+	"MrNojojojo", "Mhmd_FVC", "Overcooler_", "Menno888"
+];
 
+/**
+ * The color for the players, based on the order the players are defined
+ * in. These can be changed at any time.
+ */
+var playerColors = [
+	"green", "blue", "#EEEE00", "red"
+];
 
-		/*
-		var numPlayers = players.length;
-		
-
-	var rows = data.length;
-	var columns = 0;
-	for (i=0;i<rows;i++) {
-		if (data[i].length > columns) {
-			columns = data[i].length;
-		}
-	}
-*/
+/**
+ * Tells the script which colors should be considered "light" colors, which
+ * means they get a black checkmark/cross instead of a white one for better
+ * visibility.
+ */
+var lightColors = [
+	"yellow", "gold", "#EEEE00"
+];

@@ -1,9 +1,19 @@
 <?php
 
-$edit_key = "abcde"; // The key has to be send as &edit_key= to save anything
-$file = "bingostate"; // The name of the file to save the data into
+/**
+ * The edit key has to be send as the URL parameter "edit_key" to save anything.
+ *
+ * If this is empty, then this script is basicially disabled because no requests
+ * will be authorized.
+ */
+$edit_key = "";
 
-if (isset($_GET["edit_key"]) && $_GET["edit_key"] == $edit_key) {
+/**
+ * The name of the file to save the data info
+ */
+$file = "bingostate";
+
+if (strlen($edit_key) > 0 && isset($_GET["edit_key"]) && $_GET["edit_key"] == $edit_key) {
 	// Can do edit stuff
 	if (isset($_GET["id"]) && isset($_GET["state"])) {
 		// Edit a single field
