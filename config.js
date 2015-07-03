@@ -7,8 +7,8 @@ var meta = {
 	title: "Test Bingo Sheet",
 
 	/**
-	 * The default mode to set the sheet to if no mode is specified via URL (hash)
-	 * parameters:
+	 * The default mode to use if no mode is specified via URL parameters (see the README.md
+	 * for information on URL parameters):
 	 *
 	 * minimal: Only the table, with auto-update, local editing disabled
 	 * view: Table and update-controls, auto-update by default, local editing disabled
@@ -98,7 +98,9 @@ var data = [
 
 /**
  * Define the playernames. The order of these shouldn't be changed once
- * the sheet is in use and state is saved.
+ * the sheet is in use and state is saved. If you want to use less players
+ * remove them completely from the list (not just leave it an empty string),
+ * so the size of the state boxes on the sheet can be adjusted accordingly.
  */
 var players = [
 	"MrNojojojo", "Mhmd_FVC", "Overcooler_", "Menno888"

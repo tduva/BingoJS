@@ -9,7 +9,7 @@
 $edit_key = "";
 
 /**
- * The name of the file to save the data info
+ * The name of the file to save the data into
  */
 $file = "bingostate";
 

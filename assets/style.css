@@ -33,7 +33,7 @@ td {
 	background-color: #111;
 	border-collapse: collapse;
 	overflow: hidden;
-	width: 200px; /* Width of each card */
+/*	width: 200px; /* Width of each card */
 	height: 50px; /* Height of each card */
 }
 
@@ -42,6 +42,7 @@ td {
  */
 .content {
 	font-family: Arial;
+	width: 200px; /* Add so the table doesn't resize */
 	font-weight: bold;
 	font-size: 14px;
 }
