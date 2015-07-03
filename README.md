@@ -12,6 +12,8 @@ Advanced:
 
 * Share your current state with others (requires webserver with PHP).
 
+Check out a [Live Example](http://tduva.github.io/BingoJS/).
+
 ## Getting started
 
 ### Files
@@ -23,9 +25,9 @@ Advanced:
 * `assets/jquery-*.js`: jQuery library providing some functions used.
 * `assets/main.js`: The main behind-the-scenes logic for building the bingo sheet (you normally
    shouldn't need to change this, but feel free to tinker with it if you know what you're doing).
-* `style.css`: The style for the sheet, you can change this if you know CSS and need to adjust the
+* `assets/style.css`: The style for the sheet, you can change this if you know CSS and need to adjust the
    style (some styles are generated dynamically in addition to this).
-* `util.js`: Some general utility functions.
+* `assets/util.js`: Some general utility functions.
 * Some image files
 
 ### Basic Usage
